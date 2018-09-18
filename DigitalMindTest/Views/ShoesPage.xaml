@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="{StaticResource ShoesPageBackground}" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DigitalMindTest.Views.ShoesPage">
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Vertical" Margin="15" Spacing="0">
+            <Label Text="{Binding Title}" TextColor="White" HorizontalOptions="CenterAndExpand"/>
+            <StackLayout Margin="0,5,0,0" HorizontalOptions="FillAndExpand" BackgroundColor="White" Orientation="Horizontal">
+                <SearchBar  Placeholder="Search items.." Text="{Binding SearchText}" >
+                </SearchBar>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" BackgroundColor="Gray" HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand" Padding="10" >
+                    <Label Text="All" TextColor="Blue" />
+                    <BoxView BackgroundColor="Blue" 
+                             HeightRequest="2" 
+                             IsVisible="{Binding AllShowing}"
+                             HorizontalOptions="CenterAndExpand"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowAllPage}">
+                            
+                        </TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" 
+                             HorizontalOptions="CenterAndExpand" Padding="10" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowFavPage}">
+                            
+                        </TapGestureRecognizer>
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="Fav" TextColor="Blue" />
+                     <BoxView BackgroundColor="Blue" 
+                              HeightRequest="2" 
+                              IsVisible="{Binding FavShowing}"
+                              HorizontalOptions="CenterAndExpand"/>
+
+                </StackLayout>
+            </StackLayout>
+          </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Margin="5" Padding="5,0,5,0" BackgroundColor="{StaticResource filterBg}">
+                <Label Text="FILTER" TextColor="White" Margin="8"/>
+            </StackLayout>
+        <controls:CarouselViewControl
+            Margin="0,0,0,5"
+            Position="{Binding Position}"
+            x:Name="carousel" 
+            Orientation="Horizontal" 
+            HorizontalOptions="FillAndExpand" 
+            ItemsSource="{Binding CarouselItemSource}" 
+            VerticalOptions="FillAndExpand" 
+            AnimateTransition="true" InterPageSpacing="10">
+        </controls:CarouselViewControl>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DigitalMindTest.Views.AllShoesPage">
+    <flv:FlowListView FlowColumnCount="3" SeparatorVisibility="None" HasUnevenRows="true" FlowItemsSource="{Binding AllShoesList}">
+        <flv:FlowListView.FlowColumnTemplate>
+            <DataTemplate>
+                <StackLayout Margin="5" HeightRequest="180" Orientation="Vertical" BackgroundColor="White" >
+                    <Image Source="{Binding ShoesImageSource}"/>
+                    <Label Text="{Binding Title}"  FontAttributes="Bold" TextColor="Black"/>
+                    <Label Text="{Binding Description}"  TextColor="Gray"/>
+                    <StackLayout Margin="3" Orientation="Horizontal" VerticalOptions="EndAndExpand">
+                        <Label Text="{Binding Price}" HorizontalOptions="StartAndExpand" TextColor="Gray"/>
+                        <Image Source="{Binding FavImageSource}" HorizontalOptions="EndAndExpand"/>
+                     </StackLayout>
+                </StackLayout>
+            </DataTemplate>
+        </flv:FlowListView.FlowColumnTemplate>
+    </flv:FlowListView>
+</StackLayout>

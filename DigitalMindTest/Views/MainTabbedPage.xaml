@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xf:BottomBarPage xmlns:xf="clr-namespace:BottomBar.XamarinForms;assembly=BottomBar.XamarinForms" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DigitalMindTest.Views.MainTabbedPage" xmlns:views="clr-namespace:DigitalMindTest.Views" BarTextColor="Navy">
+    <views:ShoesPage Title="Shoes" Icon="shoe_tab.png">
+    </views:ShoesPage>
+    <views:TradePage Title="Trade" Icon="trade_tab.png">
+    </views:TradePage>
+    <views:YouPage Title="You" Icon="you_tab.png">
+    </views:YouPage>
+</xf:BottomBarPage>
